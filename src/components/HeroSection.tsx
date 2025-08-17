@@ -10,16 +10,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 alpha-container text-center text-white">
         <div className="max-w-4xl mx-auto fade-in-up">
-          <div className="flex justify-center fade-in-up-delay-2">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold backdrop-blur-sm"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
-          </div>
         </div>
       </div>
     </section>
