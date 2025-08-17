@@ -10,9 +10,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 alpha-container text-center text-white">
         <div className="max-w-4xl mx-auto fade-in-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-            {t('hero.title')}
-          </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed fade-in-up-delay-1">
             {t('hero.subtitle')}
           </p>
