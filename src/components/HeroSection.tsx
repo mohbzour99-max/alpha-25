@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative py-20 md:py-32 flex items-center justify-center overflow-hidden">
       {/* Content */}
       <div className="relative z-10 alpha-container text-center text-white">
         <div className="max-w-4xl mx-auto fade-in-up">
@@ -26,13 +26,6 @@ const HeroSection = () => {
               Watch Demo
             </Button>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
