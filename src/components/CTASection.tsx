@@ -12,7 +12,14 @@ const CTASection = () => {
       <div className="absolute inset-0">
         <iframe
           src="https://www.youtube.com/embed/8LWRt8JO0wg?autoplay=1&mute=1&loop=1&playlist=8LWRt8JO0wg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{
+            width: '100vw',
+            height: '100vh',
+            objectFit: 'cover',
+            transform: 'scale(1.2)',
+            transformOrigin: 'center center'
+          }}
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
