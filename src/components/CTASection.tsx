@@ -17,11 +17,10 @@ const CTASection = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/path-to-your-video.mp4" type="video/mp4" />
-          {/* Fallback gradient background if video fails to load */}
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Gradient overlay for better text readability and brand colors */}
+        <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary/80 via-alpha-primary/60 to-alpha-secondary/80"></div>
       </div>
 
       {/* Keep existing animated elements */}
