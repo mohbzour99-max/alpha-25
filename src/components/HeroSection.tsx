@@ -12,14 +12,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 alpha-gradient-bg opacity-80"></div>
       </div>
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-alpha-primary rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-white rounded-full animate-ping"></div>
-        <div className="absolute bottom-32 left-20 w-3 h-3 bg-alpha-primary/50 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 right-10 w-2 h-2 bg-white/70 rounded-full animate-pulse"></div>
-      </div>
-
       {/* Content */}
       <div className="relative z-10 alpha-container text-center text-white">
         <div className="max-w-4xl mx-auto fade-in-up">
