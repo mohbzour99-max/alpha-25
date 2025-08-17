@@ -13,6 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <CTASection />
       <HeroSection />
       <AboutSection />
       <ServicesSection />
@@ -20,7 +21,6 @@ const Index = () => {
       <SmallCTASection />
       <CareersSection />
       <ContactSection />
-      <CTASection />
       <Footer />
     </div>
   );
