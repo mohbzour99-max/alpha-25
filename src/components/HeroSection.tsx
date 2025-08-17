@@ -7,10 +7,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary via-alpha-primary/90 to-alpha-secondary">
-      </div>
-
       {/* Content */}
       <div className="relative z-10 alpha-container text-center text-white">
         <div className="max-w-4xl mx-auto fade-in-up">
