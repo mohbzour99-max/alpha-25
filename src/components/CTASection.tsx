@@ -8,8 +8,24 @@ const CTASection = () => {
 
   return (
     <section className="relative py-32 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary via-alpha-primary/90 to-alpha-secondary">
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/path-to-your-video.mp4" type="video/mp4" />
+          {/* Fallback gradient background if video fails to load */}
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      {/* Keep existing animated elements */}
+      <div className="absolute inset-0">
         {/* Floating Elements */}
         <div className="absolute top-10 left-10 animate-pulse">
           <Sparkles className="h-6 w-6 text-white/30" />
