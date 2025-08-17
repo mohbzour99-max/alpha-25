@@ -17,7 +17,7 @@ const CTASection = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
         </video>
         {/* Gradient overlay for better text readability and brand colors */}
         <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary/80 via-alpha-primary/60 to-alpha-secondary/80"></div>
