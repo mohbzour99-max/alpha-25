@@ -10,15 +10,14 @@ const CTASection = () => {
     <section className="relative py-32 overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/8LWRt8JO0wg?autoplay=1&mute=1&loop=1&playlist=8LWRt8JO0wg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title="Background Video"
+        ></iframe>
         {/* Gradient overlay for better text readability and brand colors */}
         <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary/80 via-alpha-primary/60 to-alpha-secondary/80"></div>
       </div>
