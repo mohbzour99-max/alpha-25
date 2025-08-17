@@ -9,7 +9,6 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary via-alpha-primary/90 to-alpha-secondary">
-        <div className="absolute inset-0 alpha-gradient-bg opacity-80"></div>
       </div>
 
       {/* Content */}
