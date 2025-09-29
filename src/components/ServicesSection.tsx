@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -31,47 +32,56 @@ const ServicesSection = () => {
     {
       key: 'dataAnalytics',
       icon: BarChart3,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/data-analytics'
     },
     {
       key: 'intelligentAssistants',
       icon: Bot,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/ai-assistants'
     },
     {
       key: 'predictionModels',
       icon: TrendingUp,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/prediction-models'
     },
     {
       key: 'recommendationModels',
       icon: Star,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/recommendation-models'
     },
     {
       key: 'regressionModels',
       icon: LineChart,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/regression-models'
     },
     {
       key: 'emotionalAnalysis',
       icon: Heart,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/sentiment-analysis'
     },
     {
       key: 'clusteringModels',
       icon: Layers,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/clustering-models'
     },
     {
       key: 'computerVision',
       icon: Eye,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/computer-vision'
     },
     {
       key: 'temporalAnalysis',
       icon: Clock,
-      color: 'bg-alpha-primary/10 text-alpha-primary'
+      color: 'bg-alpha-primary/10 text-alpha-primary',
+      href: '/services/temporal-analysis'
     }
   ];
 
@@ -161,13 +171,12 @@ const ServicesSection = () => {
                               
                               <Button 
                                 className="bg-white text-alpha-primary hover:bg-white/90 rounded-full px-8 py-3 font-medium transition-all duration-300 group w-full"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  // Add your action here
-                                }}
+                                asChild
                               >
-                                {t('services.discoverMore')}
-                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                <Link to={service.href}>
+                                  {t('services.discoverMore')}
+                                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
                               </Button>
                             </div>
                           </CardContent>

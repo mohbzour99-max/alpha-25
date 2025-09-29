@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 
 const ContactSection = () => {
@@ -16,11 +17,17 @@ const ContactSection = () => {
     name: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
+    subject: '',
+    priority: 'medium'
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -37,7 +44,7 @@ const ContactSection = () => {
         description: "We'll get back to you soon!",
       });
       
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', message: '', subject: '', priority: 'medium' });
     } catch (error) {
       toast({
         title: t('contact.form.error'),
@@ -139,6 +146,40 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="subject" className="text-alpha-secondary">
+                        Subject *
+                      </Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
+                        className="mt-2 border-alpha-neutral-200 focus:border-alpha-primary"
+                        placeholder="Brief description of your inquiry"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="priority" className="text-alpha-secondary">
+                        Priority
+                      </Label>
+                      <Select onValueChange={(value) => handleSelectChange('priority', value)} defaultValue="medium">
+                        <SelectTrigger className="mt-2 border-alpha-neutral-200 focus:border-alpha-primary">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="low">Low</SelectItem>
+                          <SelectItem value="medium">Medium</SelectItem>
+                          <SelectItem value="high">High</SelectItem>
+                          <SelectItem value="urgent">Urgent</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  
                   <div>
                     <Label htmlFor="company" className="text-alpha-secondary">
                       {t('contact.form.company')}

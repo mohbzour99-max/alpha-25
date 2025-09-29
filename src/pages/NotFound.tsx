@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
 import { Home, ArrowLeft } from 'lucide-react';
 
 const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-alpha-neutral-50">
+      <Navigation />
+      <div className="pt-20">
       <div className="text-center max-w-md mx-auto px-4">
         <div className="mb-8">
           <h1 className="text-9xl font-bold text-alpha-primary/20">404</h1>
@@ -27,6 +30,7 @@ const NotFound = () => {
             Go Back
           </Button>
         </div>
+      </div>
       </div>
     </div>
   );

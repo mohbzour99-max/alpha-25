@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -25,39 +26,48 @@ const SectorsSection = () => {
   const sectors = [
     {
       key: 'retail',
-      icon: ShoppingCart
+      icon: ShoppingCart,
+      href: '/sectors/retail-ecommerce'
     },
     {
       key: 'banking',
-      icon: Building2
+      icon: Building2,
+      href: '/industries'
     },
     {
       key: 'healthcare',
-      icon: HeartHandshake
+      icon: HeartHandshake,
+      href: '/industries'
     },
     {
       key: 'education',
-      icon: GraduationCap
+      icon: GraduationCap,
+      href: '/industries'
     },
     {
       key: 'tourism',
-      icon: Plane
+      icon: Plane,
+      href: '/industries'
     },
     {
       key: 'logistics',
-      icon: Truck
+      icon: Truck,
+      href: '/industries'
     },
     {
       key: 'realEstate',
-      icon: Home
+      icon: Home,
+      href: '/industries'
     },
     {
       key: 'professional',
-      icon: Briefcase
+      icon: Briefcase,
+      href: '/industries'
     },
     {
       key: 'communications',
-      icon: Radio
+      icon: Radio,
+      href: '/industries'
     }
   ];
 
@@ -77,7 +87,8 @@ const SectorsSection = () => {
           <CarouselContent>
             {sectors.map((sector, index) => (
               <CarouselItem key={sector.key} className="basis-full md:basis-1/2 lg:basis-1/4">
-                <Card className={`alpha-card border-0 group cursor-pointer text-center p-6 h-48 flex flex-col fade-in-up-delay-${(index % 4) + 1}`}>
+                <Link to={sector.href}>
+                  <Card className={`alpha-card border-0 group cursor-pointer text-center p-6 h-48 flex flex-col fade-in-up-delay-${(index % 4) + 1} hover:shadow-lg transition-shadow`}>
                   <CardContent className="pt-3 flex flex-col justify-center flex-1">
                     <div className="w-16 h-16 rounded-full bg-alpha-primary/10 text-alpha-primary flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                       <sector.icon className="h-8 w-8" />
@@ -87,6 +98,7 @@ const SectorsSection = () => {
                     </h3>
                   </CardContent>
                 </Card>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>

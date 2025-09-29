@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Zap, Rocket, Stars } from 'lucide-react';
 
 const CTASection = () => {
@@ -8,23 +9,25 @@ const CTASection = () => {
 
   return (
     <section className="relative py-32 overflow-hidden">
+      {/* Fallback background for when video fails to load */}
+      <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary via-alpha-primary/80 to-alpha-secondary"></div>
+      
       {/* Video Background */}
       <div className="absolute inset-0">
-        <iframe
-          src="https://www.youtube.com/embed/8LWRt8JO0wg?autoplay=1&mute=1&loop=1&playlist=8LWRt8JO0wg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-          className="absolute inset-0 w-full h-full pointer-events-none"
+        <video 
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-            transform: 'scale(1.2)',
+            transform: 'scale(1.1)',
             transformOrigin: 'center center'
           }}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title="Background Video"
-        ></iframe>
+        >
+          <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         {/* Gradient overlay for better text readability and brand colors */}
         <div className="absolute inset-0 bg-gradient-to-br from-alpha-primary/80 via-alpha-primary/60 to-alpha-secondary/80"></div>
       </div>
@@ -112,15 +115,15 @@ const CTASection = () => {
           {/* Stats or Social Proof */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fade-in delay-700">
             <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">150+</div>
+              <div className="text-4xl font-bold text-white mb-2" aria-label="150 plus clients served">150+</div>
               <div className="text-white/70">{t('ui.clientsServed')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">95%</div>
+              <div className="text-4xl font-bold text-white mb-2" aria-label="95 percent client satisfaction">95%</div>
               <div className="text-white/70">{t('cta.stats.satisfaction')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-4xl font-bold text-white mb-2" aria-label="24/7 expert support">24/7</div>
               <div className="text-white/70">{t('ui.expertSupport')}</div>
             </div>
           </div>

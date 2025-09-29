@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
@@ -25,6 +26,7 @@ import LanguageToggle from './LanguageToggle';
 
 const Navigation = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -62,7 +64,7 @@ const Navigation = () => {
           <div className="flex items-center gap-3">
             <Link to="/">
               <img 
-                src="/lovable-uploads/023d9089-8e6c-4e54-9bd6-fc0c2a216e99.png" 
+                src="/lovable-uploads/b1237e67-9047-4f58-a248-845129347a80.png" 
                 alt="Alpha AI" 
                 className="h-8 w-auto cursor-pointer"
               />
@@ -74,7 +76,12 @@ const Navigation = () => {
             {/* About Us Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-alpha-secondary hover:text-alpha-primary transition-colors font-medium">
-                {t('nav.about')}
+                <span className={location.pathname.startsWith('/about') || 
+                  location.pathname === '/industries' || 
+                  location.pathname === '/vision-mission' || 
+                  location.pathname === '/team' ? 'text-alpha-primary' : ''}>
+                  {t('nav.about')}
+                </span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-alpha-neutral-200 shadow-lg">
@@ -91,7 +98,9 @@ const Navigation = () => {
             {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-alpha-secondary hover:text-alpha-primary transition-colors font-medium">
-                {t('nav.services')}
+                <span className={location.pathname.startsWith('/services') ? 'text-alpha-primary' : ''}>
+                  {t('nav.services')}
+                </span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-alpha-neutral-200 shadow-lg">
@@ -110,7 +119,9 @@ const Navigation = () => {
               <Link
                 key={item.key}
                 to={item.href}
-                className="text-alpha-secondary hover:text-alpha-primary transition-colors font-medium"
+                className={`font-medium transition-colors ${
+                  location.pathname === item.href ? 'text-alpha-primary' : 'text-alpha-secondary hover:text-alpha-primary'
+                }`}
               >
                 {t(`nav.${item.key}`)}
               </Link>
@@ -121,7 +132,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-3">
             <Button 
               variant="ghost" 
-              size="sm" 
+              size="sm"
               className="text-alpha-secondary hover:text-alpha-primary"
               onClick={() => setIsSearchOpen(!isSearchOpen)}
             >
@@ -197,7 +208,9 @@ const Navigation = () => {
                 <Link
                   key={item.key}
                   to={item.href}
-                  className="block px-4 py-2 text-alpha-secondary hover:text-alpha-primary transition-colors font-medium"
+                  className={`block px-4 py-2 font-medium transition-colors ${
+                    location.pathname === item.href ? 'text-alpha-primary' : 'text-alpha-secondary hover:text-alpha-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(`nav.${item.key}`)}
@@ -207,7 +220,7 @@ const Navigation = () => {
               <div className="px-4 pt-2">
                 <Button 
                   variant="ghost" 
-                  size="sm" 
+                  size="sm"
                   className="w-full justify-start text-alpha-secondary hover:text-alpha-primary"
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
                 >

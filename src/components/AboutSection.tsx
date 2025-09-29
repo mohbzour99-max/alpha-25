@@ -39,7 +39,7 @@ const AboutSection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-alpha-primary mb-6">
               {t('about.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-alpha-primary font-medium leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl text-alpha-secondary font-medium leading-relaxed mb-8">
               {t('about.headline')}
             </p>
             <p className="text-lg text-alpha-neutral-800 leading-relaxed mb-8">
@@ -56,7 +56,7 @@ const AboutSection = () => {
           <div className="fade-in-up-delay-1">
             <div className="relative aspect-video bg-gradient-to-br from-alpha-primary/20 to-alpha-secondary/20 rounded-3xl overflow-hidden shadow-lg">
               <video 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-3xl"
                 controls
                 poster="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
               >

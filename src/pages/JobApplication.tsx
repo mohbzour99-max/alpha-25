@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Upload, ArrowLeft } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const JobApplication = () => {
   const { jobId } = useParams();
@@ -21,11 +22,17 @@ const JobApplication = () => {
     phone: '',
     coverLetter: '',
     experience: '',
-    portfolio: ''
+    portfolio: '',
+    yearsExperience: '',
+    availability: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -49,7 +56,9 @@ const JobApplication = () => {
         phone: '',
         coverLetter: '',
         experience: '',
-        portfolio: ''
+        portfolio: '',
+        yearsExperience: '',
+        availability: ''
       });
     } catch (error) {
       toast({
@@ -134,6 +143,36 @@ const JobApplication = () => {
                         onChange={handleInputChange}
                         required
                         className="mt-2"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="yearsExperience">Years of Experience *</Label>
+                      <Select onValueChange={(value) => handleSelectChange('yearsExperience', value)} required>
+                        <SelectTrigger className="mt-2">
+                          <SelectValue placeholder="Select experience level" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="0-1">0-1 years</SelectItem>
+                          <SelectItem value="2-3">2-3 years</SelectItem>
+                          <SelectItem value="4-5">4-5 years</SelectItem>
+                          <SelectItem value="6-10">6-10 years</SelectItem>
+                          <SelectItem value="10+">10+ years</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="availability">Availability *</Label>
+                      <Input
+                        id="availability"
+                        name="availability"
+                        value={formData.availability}
+                        onChange={handleInputChange}
+                        required
+                        className="mt-2"
+                        placeholder="e.g., Immediate, 2 weeks notice"
                       />
                     </div>
                   </div>

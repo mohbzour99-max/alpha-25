@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Facebook, Twitter, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import LanguageToggle from './LanguageToggle';
 
 const Footer = () => {
@@ -8,8 +9,8 @@ const Footer = () => {
 
   const navItems = [
     { key: 'overview', href: '#about' },
-    { key: 'careers', href: '#careers' },
-    { key: 'contact', href: '#contact' },
+    { key: 'careers', href: '/careers' },
+    { key: 'contact', href: '/contact' },
   ];
 
   const socialLinks = [
@@ -28,7 +29,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img 
-                  src="/lovable-uploads/b1237e67-9047-4f58-a248-845129347a80.png" 
+                  src="/lovable-uploads/023d9089-8e6c-4e54-9bd6-fc0c2a216e99.png" 
                   alt="Alpha AI" 
                   className="h-10 w-auto"
                 />
@@ -62,12 +63,12 @@ const Footer = () => {
               <ul className="space-y-2">
                 {navItems.map((item) => (
                   <li key={item.key}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="text-white/70 hover:text-white transition-colors"
                     >
                       {t(`nav.${item.key}`)}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -78,10 +79,10 @@ const Footer = () => {
               <h3 className="font-semibold mb-4">{t('nav.contact')}</h3>
               <div className="space-y-2 text-white/70">
                 <p>Riyadh, Saudi Arabia</p>
-                <a href="mailto:info@alphaai.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Link to="mailto:info@alphaai.com" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Mail className="h-4 w-4" />
                   info@alphaai.com
-                </a>
+                </Link>
                 <p>+966 11 123 4567</p>
               </div>
             </div>
