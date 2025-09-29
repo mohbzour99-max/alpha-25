@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Zap, Rocket, Stars } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Rocket, Star as Stars } from 'lucide-react';
 
 const CTASection = () => {
   const { t } = useTranslation();

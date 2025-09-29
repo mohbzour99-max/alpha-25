@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
-import { Home, ArrowLeft } from 'lucide-react';
+import { Chrome as Home, ArrowLeft } from 'lucide-react';
 
 const NotFound = () => {
   return (

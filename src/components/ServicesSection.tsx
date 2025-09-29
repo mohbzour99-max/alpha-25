@@ -10,19 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { 
-  BarChart3, 
-  Bot, 
-  TrendingUp, 
-  Star, 
-  LineChart, 
-  Heart, 
-  Layers, 
-  Eye, 
-  Clock,
-  ArrowRight,
-  RotateCcw
-} from 'lucide-react';
+import { ChartBar as BarChart3, Bot, TrendingUp, Star, ChartLine as LineChart, Heart, Layers, Eye, Clock, ArrowRight, RotateCcw } from 'lucide-react';
 
 const ServicesSection = () => {
   const { t } = useTranslation();

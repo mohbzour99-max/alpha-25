@@ -8,17 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { 
-  ShoppingCart, 
-  Building2, 
-  HeartHandshake, 
-  GraduationCap, 
-  Plane, 
-  Truck, 
-  Home, 
-  Briefcase, 
-  Radio 
-} from 'lucide-react';
+import { ShoppingCart, Building2, HeartHandshake, GraduationCap, Plane, Truck, Chrome as Home, Briefcase, Radio } from 'lucide-react';
 
 const SectorsSection = () => {
   const { t } = useTranslation();
